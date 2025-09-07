@@ -29,7 +29,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+    <div className="flex flex-col min-h-screen bg-[#E3E3E3] dark:bg-[#333333] text-text-light dark:text-text-dark">
       <Header />
       <main className="flex-grow">
         <PropertyDetailClient property={property} />

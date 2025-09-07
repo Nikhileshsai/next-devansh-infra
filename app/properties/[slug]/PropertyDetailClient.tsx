@@ -180,8 +180,8 @@ const PropertyDetailClient: React.FC<PropertyDetailClientProps> = ({ property })
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
             {/* Header */}
             <div className="mb-8">
-                <h1 className="text-4xl font-bold text-primary">{getTranslatedTitle()}</h1>
-                <div className="flex items-center text-secondary dark:text-gray-400 mt-2">
+                <h1 className="text-4xl font-bold text-[#333333] dark:text-[#F0F0F0]">{getTranslatedTitle()}</h1>
+                <div className="flex items-center text-[#333333] dark:text-[#F0F0F0] mt-2">
                     <Icon name="location_on" className="mr-2" />
                     <p>{property.location}</p>
                 </div>
