@@ -34,6 +34,8 @@ export const UI_TEXT = {
       error: "Failed to send message. Please try again."
     },
     whatsapp: "Chat on WhatsApp",
+    heroTitle: "",
+    heroSubtitle: "",
   },
   te: {
     featuredProperties: "ఫీచర్ చేయబడిన ప్రాపర్టీలు",
@@ -68,5 +70,7 @@ export const UI_TEXT = {
       error: "సందేశం పంపడంలో విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి."
     },
     whatsapp: "వాట్సాప్‌లో చాట్ చేయండి",
+    heroTitle: "",
+    heroSubtitle: "",
   },
 };
