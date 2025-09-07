@@ -9,7 +9,7 @@ export default async function PropertiesPage() {
   const listings = await getListings();
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#E3E3E3] dark:bg-[#333333]">
+    <div className="flex flex-col min-h-screen bg-grey-800 dark:bg-[#333333]">
       <Header />
       <main className="flex-grow">
         <PropertiesClient listings={listings} />

@@ -26,7 +26,7 @@ const AboutPage: React.FC = () => {
     } = footerContent;
 
     return (
-        <div className="flex flex-col min-h-screen bg-[#E3E3E3] dark:bg-[#333333] text-text-light dark:text-text-dark">
+        <div className="flex flex-col min-h-screen bg-grey-800 dark:bg-[#333333] text-text-light dark:text-text-dark">
             <Header />
             <main className="flex-grow">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
