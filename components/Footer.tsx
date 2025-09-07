@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Icon from './Icon';
 import { useAppContext } from '@/context/AppContext';
@@ -64,13 +65,13 @@ const Footer: React.FC = () => {
                         <h3 className="text-lg font-semibold text-text-light dark:text-text-dark mb-4">{followUsTitle}</h3>
                         <div className="flex space-x-4">
                             <a href={instagram_url} target="_blank" rel="noopener noreferrer" className="text-secondary dark:text-gray-300 hover:text-primary transition-colors">
-                               <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" className="w-6 h-6"/>
+                               <Image src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" width={24} height={24}/>
                             </a>
                             <a href={facebook_url} target="_blank" rel="noopener noreferrer" className="text-secondary dark:text-gray-300 hover:text-primary transition-colors">
-                               <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook" className="w-6 h-6"/>
+                               <Image src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook" width={24} height={24}/>
                             </a>
                             <a href={youtube_url} target="_blank" rel="noopener noreferrer" className="text-secondary dark:text-gray-300 hover:text-primary transition-colors">
-                                <img src="https://img.icons8.com/fluent/48/000000/youtube-play.png" alt="YouTube" className="w-6 h-6"/>
+                                <Image src="https://img.icons8.com/fluent/48/000000/youtube-play.png" alt="YouTube" width={24} height={24}/>
                             </a>
                         </div>
                     </div>

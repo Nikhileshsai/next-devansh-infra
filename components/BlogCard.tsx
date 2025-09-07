@@ -46,12 +46,12 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, isFeatured = false }) => {
   return (
     <Link href={`/blogs/${blog.slug}`} className="block group bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
       <Image 
-        src={blog.image_url} 
+        src={blog.image_url || 'https://placehold.co/400x192'}
         alt={blog.title || 'Blog image'} 
         width={400}
         height={192}
         className="w-full h-48 object-cover"
-        unoptimized={blog.image_url.includes('supabase')}
+        unoptimized={blog.image_url ? blog.image_url.includes('supabase') : false}
       />
       <div className="p-4 flex flex-col flex-grow">
         <h3 className="text-lg font-bold text-text-light dark:text-text-dark flex-grow group-hover:text-primary transition-colors">{getTranslatedTitle()}</h3>

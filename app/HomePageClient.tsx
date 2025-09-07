@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useAppContext } from '@/context/AppContext';
 import PropertyCard from '@/components/PropertyCard';
 import BlogCard from '@/components/BlogCard';
@@ -58,10 +59,12 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ listings, blogs, heroCo
       {/* Hero Section */}
       <section className="relative text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <Image 
             src={heroContent?.background_image_url || "https://picsum.photos/seed/hero/1920/1080"} 
             alt="Hero background" 
-            className="w-full h-full object-cover"
+            layout="fill"
+            objectFit="cover"
+            unoptimized
           />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>

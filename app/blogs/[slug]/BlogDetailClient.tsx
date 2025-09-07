@@ -53,15 +53,17 @@ const BlogDetailClient: React.FC<BlogDetailClientProps> = ({ blog }) => {
                 </header>
                 
                 <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
-                    <Image 
-                      src={blog.image_url} 
-                      alt={getTranslatedTitle()} 
-                      width={800}
-                      height={500}
-                      className="w-full h-auto object-cover"
-                      style={{maxHeight: '500px'}}
-                      unoptimized={blog.image_url.includes('supabase')}
-                    />
+                    {blog.image_url && (
+                        <Image
+                            src={blog.image_url}
+                            alt={getTranslatedTitle()}
+                            width={800}
+                            height={500}
+                            className="w-full h-auto object-cover"
+                            style={{ maxHeight: '500px' }}
+                            unoptimized={blog.image_url.includes('supabase')}
+                        />
+                    )}
                 </div>
 
                 <div className="prose dark:prose-invert max-w-none text-lg leading-relaxed text-secondary dark:text-gray-300">

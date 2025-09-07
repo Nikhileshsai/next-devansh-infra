@@ -73,12 +73,12 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
     <Link href={`/properties/${property.slug}`} className="block group bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
       <div className="relative">
         <Image 
-          src={property.image_urls[0]} 
+          src={property.image_urls[0] || 'https://placehold.co/400x224'}
           alt={property.title || 'Property image'} 
           width={400}
           height={224}
           className="w-full h-56 object-cover"
-          unoptimized={property.image_urls[0].includes('supabase')}
+          unoptimized={property.image_urls[0] ? property.image_urls[0].includes('supabase') : false}
         />
         <div className="absolute top-2 right-2 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold capitalize">{property.type}</div>
       </div>

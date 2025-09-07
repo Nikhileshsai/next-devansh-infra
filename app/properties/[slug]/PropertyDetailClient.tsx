@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useAppContext } from '@/context/AppContext';
 import Icon from '@/components/Icon';
 import ImageGallery from '@/components/ImageGallery';
@@ -267,7 +268,7 @@ const PropertyDetailClient: React.FC<PropertyDetailClientProps> = ({ property })
                         rel="noopener noreferrer"
                         className="w-full flex items-center justify-center bg-green-500 text-white py-3 rounded-md font-semibold hover:bg-green-600 transition-colors"
                     >
-                        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" className="w-6 h-6 mr-3"/>
+                        <Image src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" width={24} height={24} className="mr-3"/>
                         {text.whatsapp}
                     </a>
                     {/* Important Note */}

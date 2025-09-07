@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useAppContext } from '@/context/AppContext';
 import { UI_TEXT } from '@/constants';
 import Icon from '@/components/Icon';
@@ -61,13 +62,13 @@ const AboutPage: React.FC = () => {
                                  <h3 className="text-xl font-semibold mb-4 text-text-light dark:text-text-dark">Follow Us</h3>
                                  <div className="flex space-x-6">
                                     <a href={instagram_url} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">
-                                       <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" className="w-8 h-8"/>
+                                       <Image src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" width={32} height={32}/>
                                     </a>
                                     <a href={facebook_url} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">
-                                       <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook" className="w-8 h-8"/>
+                                       <Image src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook" width={32} height={32}/>
                                     </a>
                                     <a href={youtube_url} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">
-                                        <img src="https://img.icons8.com/fluent/48/000000/youtube-play.png" alt="YouTube" className="w-8 h-8"/>
+                                        <Image src="https://img.icons8.com/fluent/48/000000/youtube-play.png" alt="YouTube" width={32} height={32}/>
                                     </a>
                                 </div>
                              </div>
