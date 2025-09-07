@@ -2,8 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   try {
+    const secret = request.headers.get('x-revalidate-secret');
     const body = await request.json();
-    const { secret, type, table } = body;
+    const { type, table } = body;
 
     // Verify the secret key
     if (secret !== process.env.REVALIDATE_SECRET) {
@@ -17,17 +18,15 @@ export async function POST(request: NextRequest) {
         await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/revalidate-properties`, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'x-revalidate-secret': process.env.REVALIDATE_SECRET,
           },
-          body: JSON.stringify({ secret: process.env.REVALIDATE_SECRET }),
         });
       } else if (table === 'blogs' || table === 'blog_translations') {
         await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/revalidate-blogs`, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'x-revalidate-secret': process.env.REVALIDATE_SECRET,
           },
-          body: JSON.stringify({ secret: process.env.REVALIDATE_SECRET }),
         });
       }
     }
