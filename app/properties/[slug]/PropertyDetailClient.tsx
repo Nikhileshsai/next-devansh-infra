@@ -233,7 +233,7 @@ const PropertyDetailClient: React.FC<PropertyDetailClientProps> = ({ property })
                     {property.details.youtube_embed_url && (
                         <div className="p-6 bg-card-light dark:bg-card-dark rounded-lg shadow-md">
                             <h2 className="text-2xl font-bold mb-4">Virtual Tour</h2>
-                            <div className="aspect-w-16 aspect-h-9">
+                            <div className="youtube-video-container">
                                 <div dangerouslySetInnerHTML={{ __html: property.details.youtube_embed_url }} />
                             </div>
                         </div>
