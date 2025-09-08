@@ -192,10 +192,10 @@ const PropertyDetailClient: React.FC<PropertyDetailClientProps> = ({ property })
                 {/* Left/Main Column */}
                 <div className="lg:col-span-2 space-y-8">
                     <ImageGallery images={property.image_urls} altText={getTranslatedTitle()} />
-                     {/* Details Grid */}
-                    <div className="p-6 bg-card-light dark:bg-card-dark rounded-lg shadow-md">
+                    {/* Details Grid (Mobile Only) */}
+                    <div className="p-6 bg-card-light dark:bg-card-dark rounded-lg shadow-md lg:hidden">
                          <h2 className="text-2xl font-bold mb-4">{text.details}</h2>
-                         <div className="space-y-3">
+                         <div className="space-y-1">
                             {allDetails.map(detail => (
                                 <DetailItem key={detail.label} label={detail.label} value={detail.value} />
                             ))}
@@ -203,7 +203,7 @@ const PropertyDetailClient: React.FC<PropertyDetailClientProps> = ({ property })
                     </div>
                     {/* Description */}
                     <div className="p-6 bg-card-light dark:bg-card-dark rounded-lg shadow-md">
-                        <p className="leading-relaxed text-secondary dark:text-gray-300">{getTranslatedDescription()}</p>
+                        <p className="leading-relaxed text-secondary dark:text-gray-300 text-lg">{getTranslatedDescription()}</p>
                     </div>
                     {/* Investment Highlights */}
                     {property.details.investment_features && (
@@ -242,6 +242,15 @@ const PropertyDetailClient: React.FC<PropertyDetailClientProps> = ({ property })
 
                 {/* Right/Sidebar Column */}
                 <div className="space-y-8">
+                    {/* Details Grid (Desktop Only) */}
+                    <div className="hidden lg:block p-6 bg-card-light dark:bg-card-dark rounded-lg shadow-md">
+                         <h2 className="text-2xl font-bold mb-4">{text.details}</h2>
+                         <div className="space-y-1">
+                            {allDetails.map(detail => (
+                                <DetailItem key={detail.label} label={detail.label} value={detail.value} />
+                            ))}
+                        </div>
+                    </div>
                     <div className="p-6 bg-card-light dark:bg-card-dark rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">{text.connectivity}</h2>
                         <p className="whitespace-pre-line text-secondary dark:text-gray-300">{property.details.connectivity}</p>
