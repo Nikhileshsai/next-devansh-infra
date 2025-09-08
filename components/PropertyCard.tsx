@@ -70,7 +70,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
     }
 
   return (
-    <Link href={`/properties/${property.slug}`} className="block group bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+    <Link href={`/properties/${property.slug}`} className="block group bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border-2 border-transparent group-hover:border-primary">
       <div className="relative">
         <Image 
           src={property.image_urls[0] || 'https://placehold.co/400x224'}

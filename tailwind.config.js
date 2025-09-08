@@ -12,22 +12,17 @@ module.exports = {
         sans: ['Poppins', 'sans-serif'],
       },
       colors: {
-        // Softer shades for backgrounds
-        'background-light': '#F3F4F6', // Light gray
-        'background-dark': '#1F2937',  // Darker gray
-
-        // Softer shades for cards/elements (avoiding pure white)
-        'card-light': '#F9FAFB', // Very light gray, almost white but not pure
-        'card-dark': '#374151',  // Slightly lighter dark gray for cards
-
-        // Text colors with good contrast
-        'text-light': '#111827', // Very dark gray for light theme text
-        'text-dark': '#E5E7EB',  // Light gray for dark theme text
-        
-        // Primary and secondary colors (can remain vibrant if they contrast well)
-        'primary': '#3B82F6', // A friendly blue
-        'primary-hover': '#2563EB',
-        'secondary': '#6B7280', // A neutral gray for secondary text
+        'background-light': '#F7F6F2',
+        'background-dark': '#484849',
+        'card-light': '#A6A3A7',
+        'card-dark': '#3F3F46',
+        'text-light': '#222222',
+        'text-dark': '#E5E7EB',
+        'primary': '#2563EB',
+        'primary-hover': '#1D4ED8', // A slightly darker blue for hover
+        'secondary': '#6B7280',
+        'footer-bg': '#374151',
+        'footer-text': '#F3F4F6',
       }
     },
   },

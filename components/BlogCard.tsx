@@ -44,7 +44,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, isFeatured = false }) => {
         : translatedDescription?.substring(0, 150) + '...';
 
   return (
-    <Link href={`/blogs/${blog.slug}`} className="block group bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+    <Link href={`/blogs/${blog.slug}`} className="block group bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 flex flex-col h-full border-2 border-transparent group-hover:border-primary">
       <Image 
         src={blog.image_url || 'https://placehold.co/400x192'}
         alt={blog.title || 'Blog image'} 

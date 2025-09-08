@@ -20,7 +20,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark`}>
         <AppProvider footerContent={footerContent}>
           {children}
         </AppProvider>

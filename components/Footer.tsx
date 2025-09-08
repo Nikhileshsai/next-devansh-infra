@@ -37,16 +37,16 @@ const Footer: React.FC = () => {
     const copyrightNotice = language === 'te' ? copyright_notice_te : copyright_notice_en;
 
     return (
-        <footer className="bg-card-dark text-text-dark mt-auto">
+        <footer className="bg-footer-bg text-footer-text mt-auto">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
-                        <h3 className="text-xl font-bold text-text-[#F0F0F0] dark:text-text-dark mb-4">{company_name}</h3>
-                        <p className="text-[#E3E3E3] dark:text-gray-300">{heroSubtitle}</p>
+                        <h3 className="text-xl font-bold mb-4">{company_name}</h3>
+                        <p>{heroSubtitle}</p>
                     </div>
                     <div>
-                        <h3 className="text-lg font-semibold text-[#F0F0F0] dark:text-text-dark mb-4">{contactUsTitle}</h3>
-                        <ul className="space-y-2 text-[#E3E3E3] dark:text-gray-300">
+                        <h3 className="text-lg font-semibold mb-4">{contactUsTitle}</h3>
+                        <ul className="space-y-2">
                             <li className="flex items-center">
                                 <Icon name="call" className="mr-3 text-primary" />
                                 <span>{phone_number}</span>
@@ -62,21 +62,21 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="text-lg font-semibold text-[#F0F0F0] dark:text-text-dark mb-4">{followUsTitle}</h3>
+                        <h3 className="text-lg font-semibold mb-4">{followUsTitle}</h3>
                         <div className="flex space-x-4">
-                            <a href={instagram_url} target="_blank" rel="noopener noreferrer" className="text-secondary dark:text-gray-300 hover:text-primary transition-colors">
+                            <a href={instagram_url} target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">
                                <Image src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" width={24} height={24}/>
                             </a>
-                            <a href={facebook_url} target="_blank" rel="noopener noreferrer" className="text-secondary dark:text-gray-300 hover:text-primary transition-colors">
+                            <a href={facebook_url} target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">
                                <Image src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook" width={24} height={24}/>
                             </a>
-                            <a href={youtube_url} target="_blank" rel="noopener noreferrer" className="text-secondary dark:text-gray-300 hover:text-primary transition-colors">
+                            <a href={youtube_url} target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors">
                                 <Image src="https://img.icons8.com/fluent/48/000000/youtube-play.png" alt="YouTube" width={24} height={24}/>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div className="mt-8 border-t border-gray-700 pt-6 text-center text-[#E3E3E3] dark:text-gray-400">
+                <div className="mt-8 border-t border-gray-700 pt-6 text-center">
                     <p>{copyrightNotice}</p>
                 </div>
             </div>

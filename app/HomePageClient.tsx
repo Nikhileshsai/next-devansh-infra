@@ -67,7 +67,7 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ listings, blogs, heroCo
             unoptimized
           />
         </div>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black/35 dark:bg-black/55"></div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-[60vh] lg:h-[50vh]">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">{heroTitle || text.heroTitle}</h1>
@@ -77,7 +77,7 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ listings, blogs, heroCo
       </section>
 
       {/* Properties Section */}
-      <section className="py-16 overflow-hidden bg-grey-200 dark:bg-[#333333]">
+      <section className="py-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <PropertyFilter activeFilter={activeFilter} onFilterChange={setActiveFilter} />
           <div className="relative">
@@ -85,14 +85,14 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ listings, blogs, heroCo
             <div className="hidden lg:block">
               <button
                 onClick={scrollLeft}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-card-light dark:bg-card-dark shadow-lg rounded-full p-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                 aria-label="Scroll left"
               >
                 <Icon name="chevron_left" className="text-2xl text-primary" />
               </button>
               <button
                 onClick={scrollRight}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-card-light dark:bg-card-dark shadow-lg rounded-full p-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                 aria-label="Scroll right"
               >
                 <Icon name="chevron_right" className="text-2xl text-primary" />
@@ -123,9 +123,9 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ listings, blogs, heroCo
       </section>
 
       {/* Featured Blogs Section */}
-      <section className="py-16 bg-grey:800 dark:bg-[#333333]">
+      <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center dark:text-[#F7F7F7] mb-8">{text.featuredBlogs}</h2>
+          <h2 className="text-3xl font-bold text-center text-text-light dark:text-text-dark mb-8">{text.featuredBlogs}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.slice(0, 3).map((blog) => (
               <BlogCard key={blog.id} blog={blog} isFeatured={true} />

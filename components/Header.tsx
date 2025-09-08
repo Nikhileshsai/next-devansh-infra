@@ -22,12 +22,12 @@ const Header: React.FC = () => {
         `px-4 py-2 rounded-md text-sm font-medium transition-colors ${
         pathname === path
             ? 'bg-primary text-white'
-            : 'text-text-light dark:text-text-dark hover:bg-gray-200 dark:hover:bg-gray-700'
+            : 'text-text-light dark:text-text-dark hover:bg-primary/10 dark:hover:bg-primary/20'
         }`;
 
     return (
         <>
-            <header className="bg-card-light dark:bg-card-dark shadow-md sticky top-0 z-50">
+            <header className="bg-background-light dark:bg-background-dark shadow-md sticky top-0 z-50">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex-shrink-0">
@@ -42,14 +42,14 @@ const Header: React.FC = () => {
                             <Link href="/about" className={navLinkClass('/about')}>{text.about}</Link>
                         </nav>
                         <div className="flex items-center space-x-4">
-                            <button onClick={toggleLanguage} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                            <button onClick={toggleLanguage} className="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
                                 <span className="font-semibold text-text-light dark:text-text-dark">{language === 'en' ? 'తె' : 'EN'}</span>
                             </button>
-                            <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                            <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
                                 <Icon name={theme === 'light' ? 'dark_mode' : 'light_mode'} className="text-text-light dark:text-text-dark" />
                             </button>
                             <div className="md:hidden">
-                                <button onClick={toggleSidebar} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                                <button onClick={toggleSidebar} className="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
                                     <Icon name="menu" className="text-text-light dark:text-text-dark" />
                                 </button>
                             </div>
