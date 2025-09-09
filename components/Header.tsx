@@ -43,7 +43,7 @@ const Header: React.FC = () => {
                         </nav>
                         <div className="flex items-center space-x-4">
                             <button onClick={toggleLanguage} className="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
-                                <span className="font-semibold text-text-light dark:text-text-dark">{language === 'en' ? 'తె' : 'EN'}</span>
+                                <span className="font-semibold text-text-light dark:text-text-dark">{language === 'en' ? 'తెలుగు' : 'ENG'}</span>
                             </button>
                             <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
                                 <Icon name={theme === 'light' ? 'dark_mode' : 'light_mode'} className="text-text-light dark:text-text-dark" />
