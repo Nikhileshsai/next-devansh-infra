@@ -91,7 +91,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
         <div className="mt-4 flex justify-between items-center">
           <div className="text-lg font-bold text-primary">{formatPrice(property.price)}</div>
         </div>
-        <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600 flex flex-wrap gap-x-4 gap-y-2 text-sm text-secondary dark:text-text-dark">
+        <div className="h-16 md:h-auto mt-3 pt-3 border-t border-gray-200 dark:border-gray-600 flex flex-wrap gap-x-4 gap-y-2 text-sm text-secondary dark:text-text-dark">
             {getPropertyDetails().map(detail => (
                  <div key={detail.value} className="flex items-center">
                     <Icon name={detail.icon} className="text-base mr-1.5" />
