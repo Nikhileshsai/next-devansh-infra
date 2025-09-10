@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useAppContext } from '@/context/AppContext';
 import { UI_TEXT } from '@/constants';
 import Icon from '@/components/Icon';

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Icon from '@/components/Icon';
 import { useAppContext } from '@/context/AppContext';
 import { UI_TEXT } from '@/constants';
@@ -52,15 +52,13 @@ const BlogDetailClient: React.FC<BlogDetailClientProps> = ({ blog }) => {
                     </div>
                 </header>
                 
-                <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
+                <div className="mb-8 rounded-lg overflow-hidden shadow-lg relative aspect-video">
                     {blog.image_url && (
                         <Image
                             src={blog.image_url}
                             alt={getTranslatedTitle()}
-                            width={800}
-                            height={500}
-                            className="w-full h-auto object-cover"
-                            style={{ maxHeight: '500px' }}
+                            layout="fill"
+                            className="object-cover"
                             unoptimized={blog.image_url.includes('supabase')}
                         />
                     )}

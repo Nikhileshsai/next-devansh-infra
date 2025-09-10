@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useAppContext } from '@/context/AppContext';
 import PropertyCard from '@/components/PropertyCard';
 import BlogCard from '@/components/BlogCard';

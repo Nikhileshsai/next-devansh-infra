@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { Blog } from '@/types';
 import Icon from './Icon';
 import { useAppContext } from '@/context/AppContext';
@@ -45,14 +45,15 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog, isFeatured = false }) => {
 
   return (
     <Link href={`/blogs/${blog.slug}`} className="block group bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 flex flex-col h-full border-2 border-transparent group-hover:border-primary">
+      <div className="relative h-48">
       <Image 
         src={blog.image_url || 'https://placehold.co/400x192'}
         alt={blog.title || 'Blog image'} 
-        width={400}
-        height={192}
-        className="w-full h-48 object-cover"
+        layout="fill"
+        className="object-cover"
         unoptimized={blog.image_url ? blog.image_url.includes('supabase') : false}
       />
+      </div>
       <div className="p-4 flex flex-col flex-grow">
         <h3 className="text-lg font-bold text-text-light dark:text-text-dark flex-grow group-hover:text-primary transition-colors">{getTranslatedTitle()}</h3>
         <div className="flex items-center text-secondary dark:text-text-dark mt-2 text-xs">
