@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import Image from "next/legacy/image";
 import { useAppContext } from '@/context/AppContext';
 import Icon from '@/components/Icon';
@@ -288,6 +289,12 @@ const PropertyDetailClient: React.FC<PropertyDetailClientProps> = ({ property })
                         </div>
                     )}
                 </div>
+            </div>
+            <div className="text-center mt-12">
+              <Link href="/properties" className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-hover transition-colors">
+                {text.viewAllProperties}
+                <Icon name="arrow_forward" className="ml-2" />
+              </Link>
             </div>
         </div>
     );
