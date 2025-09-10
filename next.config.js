@@ -7,14 +7,15 @@ const nextConfig = {
     GEMINI_API_KEY: process.env.GEMINI_API_KEY,
   },
   images: {
-    domains: [
-      'picsum.photos',
-      'img.icons8.com',
-      // Add your Supabase domain here
-      'your-supabase-project.supabase.co',
-      // Add any other image domains you use
-    ],
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.icons8.com',
+      },
       {
         protocol: 'https',
         hostname: '*.supabase.co',

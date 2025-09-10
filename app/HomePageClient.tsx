@@ -65,6 +65,7 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ listings, blogs, heroCo
             layout="fill"
             objectFit="cover"
             unoptimized
+            priority
           />
         </div>
         <div className="absolute inset-0 bg-black/35 dark:bg-black/55"></div>
@@ -123,7 +124,7 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ listings, blogs, heroCo
       </section>
 
       {/* Featured Blogs Section */}
-      <section className="py-16">
+      <section className="pt-0 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-text-light dark:text-text-dark mb-8">{text.featuredBlogs}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
