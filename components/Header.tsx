@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAppContext } from '@/context/AppContext';
@@ -31,8 +32,9 @@ const Header: React.FC = () => {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex-shrink-0">
-                            <Link href="/" className="text-2xl font-bold text-primary">
-                                Devansh Infra
+                            <Link href="/" className="flex items-center text-2xl font-bold text-primary">
+                                <Image src="/favicon.ico" alt="Devansh Infra Logo" width={32} height={32} className="mr-4" />
+                                <span>Devansh Infra</span>
                             </Link>
                         </div>
                         <nav className="hidden md:flex items-center space-x-4">
