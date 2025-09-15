@@ -8,7 +8,7 @@ import { useAppContext } from '@/context/AppContext';
 import { UI_TEXT } from '@/constants';
 
 interface PropertiesClientProps {
-  listings: Listing[];
+    listings: Listing[];
 }
 
 const PropertiesClient: React.FC<PropertiesClientProps> = ({ listings }) => {

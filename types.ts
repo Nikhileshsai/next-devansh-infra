@@ -1,4 +1,4 @@
-export type PropertyType = 'plot' | 'flat' | 'commercial' | 'agricultural' | 'villa' | 'all' | 'others';
+export type PropertyType = 'plot' | 'flat' | 'house' | 'villa' | 'commercial' | 'agricultural' | 'all' | 'others';
 
 export interface Amenity {
   icon: string;
@@ -12,7 +12,7 @@ export interface ListingDetails {
   youtube_embed_url?: string;
   note_en?: string;
   note_te?: string;
-  
+
   // Plot
   area_sq_yards?: number;
   survey_no?: string;
@@ -21,15 +21,25 @@ export interface ListingDetails {
   gated_community?: boolean;
   investment_features?: string;
 
-  // Flat
+  // Flat & House
   bhk?: number;
   sq_ft?: number;
   furnishing?: string;
   floor?: number;
   total_floors?: number;
   car_parking?: boolean;
-  
-  // Commercial - uses floor, sq_ft from Flat
+  bath_rooms?: number;
+  construction_status?: string;
+  listed_by?: string;
+  carpet_area_sqft?: number;
+  uds?: string;
+  age_of_property_years?: number;
+  maintenance?: number;
+  facing?: string;
+  floor_no?: number;
+  // House-specific fields are covered above
+  // Villa shares most fields with Flat/House except uds and maintenance
+  // Commercial covers shops & offices
 
   // Agricultural
   acres?: number;
@@ -92,29 +102,29 @@ export type Language = 'en' | 'te';
 export type Theme = 'light' | 'dark';
 
 export interface FooterContentType {
-    company_name: string;
-    hero_subtitle_en: string;
-    hero_subtitle_te: string;
-    contact_us_title_en: string;
-    contact_us_title_te: string;
-    phone_number: string;
-    email: string;
-    company_address: string;
-    follow_us_title_en: string;
-    follow_us_title_te: string;
-    instagram_url: string;
-    facebook_url: string;
-    youtube_url: string;
-    copyright_notice_en: string;
-    copyright_notice_te: string;
+  company_name: string;
+  hero_subtitle_en: string;
+  hero_subtitle_te: string;
+  contact_us_title_en: string;
+  contact_us_title_te: string;
+  phone_number: string;
+  email: string;
+  company_address: string;
+  follow_us_title_en: string;
+  follow_us_title_te: string;
+  instagram_url: string;
+  facebook_url: string;
+  youtube_url: string;
+  copyright_notice_en: string;
+  copyright_notice_te: string;
 }
 
 export interface HeroContentType {
-    background_image_url: string;
-    hero_title_en: string;
-    hero_title_te: string;
-    hero_subtitle_en: string;
-    hero_subtitle_te: string;
+  background_image_url: string;
+  hero_title_en: string;
+  hero_title_te: string;
+  hero_subtitle_en: string;
+  hero_subtitle_te: string;
 }
 
 export interface AppContextType {

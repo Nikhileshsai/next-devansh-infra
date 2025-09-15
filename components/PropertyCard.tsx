@@ -10,71 +10,77 @@ interface PropertyCardProps {
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
-    const { language } = useAppContext();
-    
-    // Get the appropriate translation based on current language
-    const getTranslatedTitle = () => {
-        if (language === 'te' && property.te_title) {
-            return property.te_title;
-        }
-        return property.title || property.en_title || 'No Title';
-    };
+  const { language } = useAppContext();
 
-    const getTranslatedDescription = () => {
-        if (language === 'te' && property.te_description) {
-            return property.te_description;
-        }
-        return property.description || property.en_description || 'No Description';
-    };
-
-    const formatPrice = (price: string) => {
-        const num = parseInt(price, 10);
-        if (num >= 10000000) {
-            return `₹${(num / 10000000).toFixed(2)} Cr`;
-        }
-        if (num >= 100000) {
-            return `₹${(num / 100000).toFixed(2)} Lac`;
-        }
-        return `₹${num.toLocaleString('en-IN')}`;
-    };
-
-    const getPropertyDetails = () => {
-        const details = [];
-        switch(property.type) {
-            case 'plot':
-                if (property.details.area_sq_yards) details.push({ icon: 'square_foot', value: `${property.details.area_sq_yards} sq. yards` });
-                if (property.details.gated_community) details.push({ icon: 'gite', value: 'Gated Community' });
-                break;
-            case 'flat':
-                if (property.details.bhk) details.push({ icon: 'king_bed', value: `${property.details.bhk} BHK` });
-                if (property.details.sq_ft) details.push({ icon: 'square_foot', value: `${property.details.sq_ft} sq. ft.`});
-                if (property.details.car_parking) details.push({ icon: 'local_parking', value: 'Car Parking' });
-                break;
-            case 'villa':
-                if (property.details.bhk) details.push({ icon: 'king_bed', value: `${property.details.bhk} BHK` });
-                if (property.details.sq_ft) details.push({ icon: 'square_foot', value: `${property.details.sq_ft} sq. ft.`});
-                if (property.details.private_pool) details.push({ icon: 'pool', value: 'Private Pool'});
-                break;
-            case 'commercial':
-                if (property.details.floor) details.push({ icon: 'apartment', value: `Floor ${property.details.floor}` });
-                if (property.details.sq_ft) details.push({ icon: 'square_foot', value: `${property.details.sq_ft} sq. ft.`});
-                break;
-            case 'agricultural':
-                 if (property.details.acres) details.push({ icon: 'grass', value: `${property.details.acres} acres` });
-                break;
-            case 'others':
-                if (property.details.area) details.push({ icon: 'square_foot', value: `${property.details.area}` });
-                break;
-        }
-        return details;
+  // Get the appropriate translation based on current language
+  const getTranslatedTitle = () => {
+    if (language === 'te' && property.te_title) {
+      return property.te_title;
     }
+    return property.title || property.en_title || 'No Title';
+  };
+
+  const getTranslatedDescription = () => {
+    if (language === 'te' && property.te_description) {
+      return property.te_description;
+    }
+    return property.description || property.en_description || 'No Description';
+  };
+
+  const formatPrice = (price: string) => {
+    const num = parseInt(price, 10);
+    if (num >= 10000000) {
+      return `₹${(num / 10000000).toFixed(2)} Cr`;
+    }
+    if (num >= 100000) {
+      return `₹${(num / 100000).toFixed(2)} Lac`;
+    }
+    return `₹${num.toLocaleString('en-IN')}`;
+  };
+
+  const getPropertyDetails = () => {
+    const details = [];
+    switch (property.type) {
+      case 'plot':
+        if (property.details.area_sq_yards) details.push({ icon: 'square_foot', value: `${property.details.area_sq_yards} sq. yards` });
+        if (property.details.gated_community) details.push({ icon: 'gite', value: 'Gated Community' });
+        break;
+      case 'flat':
+        if (property.details.bhk) details.push({ icon: 'king_bed', value: `${property.details.bhk} BHK` });
+        if (property.details.sq_ft) details.push({ icon: 'square_foot', value: `${property.details.sq_ft} sq. ft.` });
+        if (property.details.car_parking) details.push({ icon: 'local_parking', value: 'Car Parking' });
+        break;
+      case 'house':
+        if (property.details.bhk) details.push({ icon: 'king_bed', value: `${property.details.bhk} BHK` });
+        if (property.details.sq_ft) details.push({ icon: 'square_foot', value: `${property.details.sq_ft} sq. ft.` });
+        if (property.details.car_parking) details.push({ icon: 'local_parking', value: 'Car Parking' });
+        if (property.details.bath_rooms) details.push({ icon: 'bathtub', value: `${property.details.bath_rooms} Bath` });
+        break;
+      case 'villa':
+        if (property.details.bhk) details.push({ icon: 'king_bed', value: `${property.details.bhk} BHK` });
+        if (property.details.sq_ft) details.push({ icon: 'square_foot', value: `${property.details.sq_ft} sq. ft.` });
+        if (property.details.private_pool) details.push({ icon: 'pool', value: 'Private Pool' });
+        break;
+      case 'commercial':
+        if (property.details.floor) details.push({ icon: 'apartment', value: `Floor ${property.details.floor}` });
+        if (property.details.sq_ft) details.push({ icon: 'square_foot', value: `${property.details.sq_ft} sq. ft.` });
+        break;
+      case 'agricultural':
+        if (property.details.acres) details.push({ icon: 'grass', value: `${property.details.acres} acres` });
+        break;
+      case 'others':
+        if (property.details.area) details.push({ icon: 'square_foot', value: `${property.details.area}` });
+        break;
+    }
+    return details;
+  }
 
   return (
     <Link href={`/properties/${property.slug}`} className="block group bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border-2 border-transparent group-hover:border-primary">
       <div className="relative h-56">
-        <Image 
+        <Image
           src={property.image_urls[0] || 'https://placehold.co/400x224'}
-          alt={property.title || 'Property image'} 
+          alt={property.title || 'Property image'}
           layout="fill"
           className="object-cover"
           unoptimized={property.image_urls[0] ? property.image_urls[0].includes('supabase') : false}
@@ -91,12 +97,12 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
           <div className="text-lg font-bold text-primary">{formatPrice(property.price)}</div>
         </div>
         <div className="h-16 md:h-auto mt-3 pt-3 border-t border-gray-200 dark:border-gray-600 flex flex-wrap gap-x-4 gap-y-2 text-sm text-secondary dark:text-text-dark">
-            {getPropertyDetails().map(detail => (
-                 <div key={detail.value} className="flex items-center">
-                    <Icon name={detail.icon} className="text-base mr-1.5" />
-                    <span>{detail.value}</span>
-                </div>
-            ))}
+          {getPropertyDetails().map(detail => (
+            <div key={detail.value} className="flex items-center">
+              <Icon name={detail.icon} className="text-base mr-1.5" />
+              <span>{detail.value}</span>
+            </div>
+          ))}
         </div>
       </div>
     </Link>
