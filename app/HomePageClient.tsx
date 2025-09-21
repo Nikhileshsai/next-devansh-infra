@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useAppContext } from '@/context/AppContext';
 import PropertyCard from '@/components/PropertyCard';
 import BlogCard from '@/components/BlogCard';
@@ -62,8 +62,8 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ listings, blogs, heroCo
           <Image 
             src={heroContent?.background_image_url || "https://picsum.photos/seed/hero/1920/1080"} 
             alt="Hero background" 
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{objectFit: "cover"}}
             unoptimized
             priority
           />

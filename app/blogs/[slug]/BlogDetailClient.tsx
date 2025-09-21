@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Icon from '@/components/Icon';
 import { useAppContext } from '@/context/AppContext';
 import { UI_TEXT } from '@/constants';
@@ -57,8 +57,8 @@ const BlogDetailClient: React.FC<BlogDetailClientProps> = ({ blog }) => {
                         <Image
                             src={blog.image_url}
                             alt={getTranslatedTitle()}
-                            layout="fill"
-                            className="object-cover"
+                            fill
+                            style={{objectFit: "cover"}}
                             unoptimized={blog.image_url.includes('supabase')}
                         />
                     )}
