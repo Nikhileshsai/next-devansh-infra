@@ -55,8 +55,8 @@ export async function generateStaticParams() {
 }
 
 // This is now a server component that fetches data at build time
-export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function BlogDetailPage({ params }: Props) {
+  const { slug } = params;
   const blog = await getBlogBySlug(slug);
 
   if (!blog) {
