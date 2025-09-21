@@ -44,6 +44,20 @@ const BlogDetailClient: React.FC<BlogDetailClientProps> = ({ blog }) => {
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-4xl">
             <article>
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Article",
+                    "headline": blog.title,
+                    "image": blog.image_url,
+                    "datePublished": blog.created_at,
+                    "author": {
+                      "@type": "Person",
+                      "name": process.env.NEXT_PUBLIC_AUTHOR_NAME || "Devansh Infra"
+                    },
+                  }) }}
+                />
                 <header className="mb-8 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold text-primary leading-tight mb-4">{getTranslatedTitle()}</h1>
                     <div className="flex items-center justify-center text-secondary dark:text-gray-400">
