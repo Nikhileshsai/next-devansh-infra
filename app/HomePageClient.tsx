@@ -106,7 +106,7 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ listings, blogs, heroCo
               onScroll={(e) => setScrollPosition(e.currentTarget.scrollLeft)}
             >
               {filteredListings.length > 0 ? filteredListings.map((property) => (
-                <div key={property.id} className="w-80 md:w-96 flex-shrink-0">
+                <div key={property.id} className="w-72 sm:w-80 md:w-96 flex-shrink-0">
                     <PropertyCard property={property} />
                 </div>
               )) : (
