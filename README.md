@@ -1,6 +1,6 @@
-# Devansh Infra - Next.js Version
+# R.S. Estate - Next.js Version
 
-This is a Next.js version of the Devansh Infra real estate website, converted from the original Vite React application.
+This is a Next.js version of the R.S. Estate real estate website, converted from the original Vite React application.
 
 ## Features
 

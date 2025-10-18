@@ -54,7 +54,7 @@ const BlogDetailClient: React.FC<BlogDetailClientProps> = ({ blog }) => {
                     "datePublished": blog.created_at,
                     "author": {
                       "@type": "Person",
-                      "name": process.env.NEXT_PUBLIC_AUTHOR_NAME || "Devansh Infra"
+                      "name": process.env.NEXT_PUBLIC_AUTHOR_NAME || "R.S. Estate"
                     },
                   }) }}
                 />

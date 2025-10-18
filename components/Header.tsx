@@ -33,8 +33,8 @@ const Header: React.FC = () => {
                     <div className="flex items-center justify-between h-16">
                         <div className="flex-shrink-0">
                                 <Link href="/" className="flex items-center text-xl sm:text-2xl font-bold text-primary">
-                                <Image src="/favicon.ico" alt="Devansh Infra Logo" width={32} height={32} className="mr-4" />
-                                <span>Devansh Infra</span>
+                                <Image src="/favicon.ico" alt="R.S. Estate Logo" width={32} height={32} className="mr-4" />
+                                <span>R.S. Estate</span>
                             </Link>
                         </div>
                         <nav className="hidden md:flex items-center space-x-4">
